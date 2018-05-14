@@ -1,0 +1,7 @@
+
+<span ng-if="(value.creditLimit-value.credit) > 0" class="green-take" ng-click="takeTap(value.credit-value.creditLimit,value._id)">
+    {{value.creditLimit-value.credit}}
+</span>
+<span ng-if="(value.creditLimit-value.credit) <= 0">
+    0
+</span>

@@ -1,0 +1,56 @@
+<div class="form-group">
+    <label>Country*</label>
+    <multiple-select  name="country" required ng-model="formData.country" ng-name = "name.country" api="searchCountry" ng-create="countrySave"></multiple-select>
+    <div class="error-msg" ng-show="demoForm.country.$invalid">Please Enter Country</div>
+</div>
+<div class="form-group">
+    <label>Zone*</label>
+    <multiple-select  name="zone" required ng-model="formData.zone" filter='{"country":"{{formData.country}}"}' ng-name = "name.zone" api="searchZone" ng-create="zoneSave"></multiple-select>
+    <div class="error-msg" ng-show="demoForm.zone.$invalid">Please Enter Zone</div>
+</div>
+<div class="form-group">
+    <label>State*</label>
+    <multiple-select  name="state" required ng-model="formData.state" filter='{"zone":"{{formData.zone}}"}' ng-name = "name.state" api="searchState" ng-create="stateSave"></multiple-select>
+    <div class="error-msg" ng-show="demoForm.state.$invalid">Please Enter State</div>
+</div>
+<div class="form-group">
+    <label>District*</label>
+    <multiple-select  name="district" required ng-model="formData.district" filter='{"state":"{{formData.state}}"}' ng-name = "name.district" api="searchDistrict" ng-create="districtSave"></multiple-select>
+    <div class="error-msg" ng-show="demoForm.district.$invalid">Please Enter district</div>
+</div>
+<div class="form-group">
+    <label>City*</label>
+    <multiple-select  name="city" required ng-model="formData.city" filter='{"district":"{{formData.district}}"}' ng-name = "formData.city1" api="searchCity" ng-create="citySave"></multiple-select>
+    <div class="error-msg" ng-show="demoForm.city.$invalid">Please Enter city</div>
+</div>
+<div class="form-group">
+    <label>Address</label>
+    <textarea class="form-control"  ng-model="formData.address"></textarea>
+</div>
+<div class="form-group">
+    <label>Postal Code</label>
+    <input type="text" class="form-control"  ng-model="formData.pincode" ng-keyup="getLatLng(formData.address+','+formData.pincode);">
+</div>
+<div class="form-group">
+    <label for="">Latitude</label>
+    <input type="text" name="lat" ng-model="formData.lat" class="form-control" >
+</div>
+<div class="form-group">
+    <label for="">Longitude</label>
+    <input type="text" name="lng" ng-model="formData.lng" class="form-control" >
+</div>
+<div class="form-group">
+    <div ng-if="formData.lat && formData.lng" map-lazy-load="https://maps.google.com/maps/api/js?key=AIzaSyC62zlixVsjaq4zDaL4cefNCubjCgxkte4">
+        <ng-map scrollwheel=false zoom="17" center="[{{formData.lat}},{{formData.lng}}]">
+            <marker on-dragend="change();"  position="[{{formData.lat}},{{formData.lng}}]" draggable="true" ></marker>
+        </ng-map>
+    </div>
+</div>
+<div class="form-group" ng-show="formData.country && formData.zone && formData.state && formData.district && formData.city && formData.pincode && formData.address">
+    <label>Final Address</label>
+    <div>
+      {{formData.address }},</br>
+      {{formData.city1}} {{formData.pincode}},</br>
+      {{name.district}}, {{name.state}}, {{name.country}}
+    </div>
+</div>

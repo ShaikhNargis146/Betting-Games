@@ -1,0 +1,51 @@
+{
+    "title": "Player",
+    "description": "List of Players",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [ {
+        "name": "player No",
+        "isSort": "",
+        "tableRef": "playerNo"
+    },
+    {
+        "name": "Image",
+        "isSort": "",
+        "tableRef": "image"
+    },
+    {
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    },{
+        "name": "Total Amount",
+        "isSort": "",
+        "tableRef": "totalAmount"
+    }  
+    ],
+    "action": [{
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete Player",
+        "content": "Are you sure you want to delete Player?",
+        "api": "Table/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createPlayer"
+    }],
+    "apiCall": {
+        "url": "Player/search",
+        "params": "_id"
+    }
+}

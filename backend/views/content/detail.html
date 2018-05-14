@@ -1,0 +1,51 @@
+<div ng-controller="DetailCtrl">
+    <div class="breadcrumbs">
+        <ul>
+            <li>
+                <a title="Home">Home </a>
+            </li>
+            <li>
+                <a>{{json.json.title}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="heading-sec">
+        <div class="row">
+            <div class="col-md-4 column">
+                <div class="heading-profile">
+                    <h2>{{json.json.title}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Bar Chart -->
+    <div class="panel-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="widget">
+                    <div class="form-elements-sec">
+                        <div class="widget-title" ng-show="json.json.desciption">
+                            <h3>{{json.json.desciption}}</h3>
+                        </div>
+                        <form name="detailForm" role="form" class="sec ng-pristine ng-valid">
+                            <!--<pre>{{data|json}}</pre>-->
+                            <div class="row">
+                                <div class="col-md-12" ng-if="json.json.pageType == 'create'">
+                                    <detail-field type="field" form="detailForm" value="item" ng-repeat="field in json.json.fields" data="data"></detail-field>
+                                </div>
+                                <div class="col-md-12" ng-if="json.json.pageType == 'edit' && data._id">
+                                    <detail-field type="field" form="detailForm" value="item" ng-repeat="field in json.json.fields" data="data"></detail-field>
+                                </div>
+                            </div>
+                            <div class="text-center mt20 odd-even-button">
+                                <button class="btn btn-default" type="submit" ng-click="saveData(data)" ng-disabled="detailForm.$invalid">Save</button>
+                                <button class="btn btn-default" ng-click="onCancel(json.json.action[1].stateName)">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

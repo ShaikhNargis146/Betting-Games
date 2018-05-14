@@ -1,0 +1,12 @@
+<div class="relative">
+    <button type="button" class="multipleClose" ng-show="listview" ng-click="closeList()">CLOSE</button>
+    <input type="text" class="hidden" name="{{name}}" ng-if="isRequired" ng-model="model" required>
+    <input type="text" class="hidden" name="{{name}}" ng-if="!isRequired" ng-model="model">
+    <input type="text" ng-if="isRequired" ng-blur="closeListSlow()" required class="form-control typeText" ng-model="search.modelData"
+        ng-focus="showList();" ng-change="searchNew(search.modelData)" ng-disabled="disabled" onkeyup="">
+    <ul class="ng-list allOptions" ng-show="listview">
+        <li ng-repeat="l in list" ng-class="{'arrow-down':activeKey==$index}" ng-click="sendData(l._id,l.name);" ng-if="list.length>0">{{l.name}}</li>
+        <li class="lightColor" ng-class="{'arrow-down':activeKey==list.length}" ng-if="create && showCreate && search.modelData != ''"
+            ng-click="createNew(search.modelData);">Click to create new "{{search.modelData|capitalize}}"</li>
+    </ul>
+</div>

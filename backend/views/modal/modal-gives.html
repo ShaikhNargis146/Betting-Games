@@ -1,0 +1,21 @@
+<div class="modal-demo">
+    <div class="modal-header">
+        <h3 class="modal-title">{{type.name}}</h3>
+    </div>
+    <div class="modal-body">
+        <form name="detailForm" role="form" class="sec ng-pristine ng-valid">
+            <div class="form-group">
+                <label>{{type.name}}
+                    <span ng-show="type.required">*</span>
+                </label>
+                <input type="url" name="{{type.tableRef}}" placeholder="{{type.placeholder}}" ng-model="formData[type.tableRef]" class="form-control"
+                    ng-required="type.required">
+                <div class="error-msg" ng-show="detailForm[type.tableRef].$invalid && detailForm[type.tableRef].$touched">Please enter valid {{type.name}}</div>
+            </div>
+            <div class="text-center mt20 odd-even-button">
+                <button class="btn btn-default" type="submit" ng-click="saveData(data)" ng-disabled="detailForm.$invalid">Save</button>
+                <button class="btn btn-default" ng-click="onCancel(json.json.action[1].stateName)">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

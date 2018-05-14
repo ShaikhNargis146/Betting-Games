@@ -1,0 +1,6 @@
+apps:
+  - script: "app.js"
+    name: "Teenpatti Testing - 94"
+    watch: false
+    args: "--prod"
+    exec_mode: "cluster"

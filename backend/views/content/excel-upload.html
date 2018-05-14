@@ -1,0 +1,52 @@
+<form name="formName" ng-submit="saveModel(formData)">
+    <div class="heading-sec">
+        <div class="row">
+            <div class="col-md-12 column">
+                <div class="heading-profile">
+                    <h2>Upload Excel</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="widget">
+        <div class="form-elements-sec">
+            <div class="sec">
+                <div class="widget-title">
+                    <div class="pull-right">
+                        <!-- <a href="mailto:chintan@wohlig.com?subject=&body=" class="btn btn-primary"><i class="fa fa-share"></i> Send Email</a> -->
+                        <a class="btn btn-success" ng-href="{{template.adminurl}}../importFormat/{{form.model}}.xlsx" download><i class="fa fa-table"></i> Download Excel Format </a>
+                    </div>
+                    <h4>Upload Excel File:</h4>
+                    <upload-image no-view type="excel" ng-model="form.file" ng-callback="excelUploaded();"></upload-image>
+                </div>
+                <div ng-if="data">
+                    <h5>Upload Status:</h5>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th width="100">Row #</th>
+                                <th>Status</th>
+                                <th width="200">Total Entries: {{data.value.length}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="d in data.value">
+                                <td>
+                                    <span class="success" ng-if="!d.name"><i class="fa fa-check-circle"></i> Row {{$index+2}}</span>
+                                    <span class="danger" ng-if="d.name"><i class="fa fa-times-circle"></i> Row {{$index+2}}</span>
+                                </td>
+                                <td colspan="2">
+                                    <span ng-if="!d.name">Entry successful!</span>
+                                    <span ng-if="d.name">
+                                <span>Entry failed!</span>
+                                    <pre class="danger-pre"><code>{{d | json:4}}</code></pre>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

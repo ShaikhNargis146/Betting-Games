@@ -1,0 +1,13 @@
+<div class="form-group" fields>
+    <label>{{type.name}} <span ng-show="type.required">*</span></label>
+    <div class="row">
+        <div class="col-md-9"><input type="text" name="{{type.tableRef}}" placeholder="{{type.placeholder}}" ng-change="changeYoutubeUrl(youtubeValue);"
+                ng-model="youtubeValue" class="form-control" ng-required="type.required" ng-disabled="{{type.disabled}}">
+            <div class="error-msg" ng-show="detailForm[type.tableRef].$invalid && detailForm[type.tableRef].$touched">Please enter valid {{type.name}}</div>
+        </div>
+        <div class="col-md-3">
+            <img ng-src="{{formData[type.tableRef]|getyoutubeimageurl}}" class="img-responsive img-thumbnail">
+        </div>
+    </div>
+
+</div>

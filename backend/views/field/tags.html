@@ -1,0 +1,26 @@
+<div class="form-group">
+    <label>{{type.name}} <span ng-show="type.required">*</span></label>
+    <ui-select multiple tagging="tagTransform" tagging-label="(press enter to add new)" on-remove="tagClicked($select.selected)"
+        name="{{type.tableRef}}" ng-model="formData[type.tableRef]" theme="bootstrap" ng-required="type.required" ng-if="type.dropDownType == 'multiple'"
+        ng-disabled="type.disabled">
+        <ui-select-match placeholder="{{type.placeholder}}">
+            <sapn ng-if="type.dropDownField!=''">{{$item[type.dropDownField]}}</sapn>
+            <span ng-if="type.dropDownField==''">{{$item}}</span>
+        </ui-select-match>
+        <ui-select-choices repeat="tag in tags[type.tableRef] | filter:$select.search" refresh-delay="0" refresh="refreshTags($select.search)">
+            <sapn ng-if="type.dropDownField!=''">{{tag[type.dropDownField]}}</sapn>
+            <span ng-if="type.dropDownField==''">{{tag}}</span>
+        </ui-select-choices>
+    </ui-select>
+    <ui-select name="{{type.tableRef}}" ng-model="formData[type.tableRef]" theme="bootstrap" ng-required="type.required" ng-if="type.dropDownType == 'single'">
+        <ui-select-match placeholder="{{type.placeholder}}">
+            <span ng-if="type.dropDownField==''">{{$select.selected}}</span>
+            <span ng-if="type.dropDownField!=''">{{$select.selected[type.dropDownField]}}</span>
+        </ui-select-match>
+        <ui-select-choices repeat="tag in tags[type.tableRef] | filter:$select.search" refresh-delay="0" refresh="refreshTags($select.search)">
+            <span ng-if="type.dropDownField==''">{{tag}}</span>
+            <span ng-if="type.dropDownField!=''">{{tag[type.dropDownField]}}</span>
+        </ui-select-choices>
+    </ui-select>
+    <div class="error-msg" ng-show="detailForm[type.tableRef].$invalid && detailForm[type.tableRef].$touched && type.required">Please enter valid {{type.name}}</div>
+</div>

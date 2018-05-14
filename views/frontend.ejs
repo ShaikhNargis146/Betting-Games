@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head ng-controller="headerCtrl">
+    <meta charset="utf-8">
+    <base href="/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <link rel="shortcut icon" href="img/favicon.ico" />
+
+    <title ng-bind="'Node Framework | '+template.title"></title>
+
+    <!--[if IE]> <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script> <![endif]-->
+    <!--[if IE]> <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script> <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script> <![endif]-->
+</head>
+
+<body>
+    <div class="repeated-item" ui-view></div>
+
+
+    <link rel="stylesheet" type="text/css" href="css/import.css" />
+
+    <script>
+        var adminurl = "<%= ((typeof adminurl) == "undefined") ? "" : adminurl  %>";
+        var isproduction = true;
+        var chintan = function(content) {
+            console.log("%c ---------------------------------------", 'background: #222; color: #bada55');
+            console.log(content);
+            console.log("%c ---------------------------------------", 'background: #222; color: #bada55');
+        };
+    </script>
+    <% _.each(jsFiles,function(file) {  %>
+        <script src="<%= file %>"></script>
+        <% }); %>
+</body>
+
+</html>

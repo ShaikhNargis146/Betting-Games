@@ -1,0 +1,6 @@
+<div class="form-group" fields>
+    <label>{{type.name}} <span ng-show="type.required">*</span></label>
+    <textarea name="{{type.tableRef}}" ng-model="formData[type.tableRef]" placeholder="{{type.placeholder}}" class="form-control"
+        ng-required="type.required" ng-disabled="{{type.disabled}}"></textarea>
+    <div class="error-msg" ng-show="detailForm[type.tableRef].$invalid && detailForm[type.tableRef].$touched">Please enter valid {{type.name}}</div>
+</div>

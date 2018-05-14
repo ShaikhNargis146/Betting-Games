@@ -1,0 +1,6 @@
+<span ng-if="(value.credit-value.creditLimit) > 0" class="red-give" ng-click="giveTap(value.credit-value.creditLimit,value.username,value._id);modalopen();">
+    {{value.credit-value.creditLimit | number:2}}
+</span>
+<span ng-if="(value.credit-value.creditLimit) <= 0" ng-click="modalopen();">
+    0
+</span>

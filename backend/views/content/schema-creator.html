@@ -1,0 +1,125 @@
+<form name="formName" ng-submit="saveModel(formData)">
+    <div class="heading-sec">
+        <div class="row">
+            <div class="col-md-12 column">
+                <div class="heading-profile">
+                    <h2>Create New Schema</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="widget">
+        <div class="form-elements-sec">
+            <div class="sec">
+                <div class="clearfix"></div>
+                <div ng-repeat="form in formData.forms">
+                    <div>
+                        <!--<div class="mark-float">
+                                <i class="fa fa-plus-circle success" ng-click="addHead();"></i>
+                                <i class="fa fa-minus-circle danger" ng-click="removeHead($index);"></i>
+                            </div>-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Enter Schema Heading</label>
+                                    <input type="text" ng-model="form.name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Collection Type</label>
+                                    <select class="form-control" ng-options="collectionType as collectionType for collectionType in collectionTypes" ng-model="form.collectionType">
+                                <option value="">Select</option>
+                            </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field-repeat" ng-repeat="item in form.items">
+                        <div class="floating-right">
+                            <button class="btn btn-primary" type="button" ng-click="addItem(form);"><i class="fa fa-plus"></i></button>
+                            <button class="btn btn-danger" type="button" ng-click="removeItem(form, $index);"><i class="fa fa-minus"></i></button>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Schema Name</label>
+                                    <input type="text" ng-model="item.name" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Schema Type</label>
+                                    <select class="form-control" ng-options="sch as sch.schemaType for sch in schema track by sch.schemaType" ng-model="item.type"> 
+                                        <option value="">Choose a type</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Default</label>
+                                    <input type="text" ng-model="item.default" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Required</label>
+                                    <p>
+                                        <toggle-switch on-label="Yes" off-label="No" ng-model="item.required" class="switch-mini switch-success "></toggle-switch>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>View</label>
+                                    <p>
+                                        <toggle-switch on-label="Yes" off-label="No" ng-model="item.view" class="switch-mini switch-success "></toggle-switch>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Unique</label>
+                                    <p>
+                                        <toggle-switch on-label="Yes" off-label="No" ng-model="item.unique" class=" switch-mini switch-success "></toggle-switch>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>URL Slug</label>
+                                    <p>
+                                        <toggle-switch on-label="Yes" off-label="No" ng-model="item.urlSlug" class=" switch-mini switch-success "></toggle-switch>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Regex (if any)</label>
+                                    <input type="text" ng-model="item.regex" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3" ng-if="item.type.Input1 && item.type.Input1 != '' ">
+                                <div class="form-group">
+                                    <label>{{item.type.Input1}}</label>
+                                    <input type="text" ng-model="item.f1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3" ng-if="item.type.Input2 && item.type.Input2 != ''">
+                                <div class="form-group">
+                                    <label>{{item.type.Input2}}</label>
+                                    <input type="text" ng-model="item.f2" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="text-center mt20 odd-even-button">
+        <button class="btn btn-default" type="submit" ng-disabled="formName.$invalid">Save</button>
+    </div>
+    </div>
+</form>

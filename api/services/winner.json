@@ -1,0 +1,179 @@
+{
+    "winners": [{
+            "_id": "59f04b05f67f272540222a76",
+            "createdAt": "2017-10-25T08:27:49.769Z",
+            "updatedAt": "2017-11-25T07:37:00.967Z",
+            "playerNo": 1,
+            "cards": [
+                "Tc",
+                "3d"
+            ],
+            "isDealer": false,
+            "isFold": false,
+            "isActive": true,
+            "isTurn": false,
+            "__v": 411,
+            "cardsServe": 0,
+            "isAllIn": false,
+            "isLastBlind": false,
+            "hasRaised": false,
+            "allCards": [
+                "Tc",
+                "3d",
+                "Jc",
+                "5c",
+                "7h",
+                "2s",
+                "2d"
+            ],
+            "winName": "Pair",
+            "descr": "Pair, 2's",
+            "winRank": 4
+        },
+        {
+            "_id": "59f04b27f67f272540222a7a",
+            "createdAt": "2017-10-25T08:28:23.981Z",
+            "updatedAt": "2017-11-25T07:37:00.967Z",
+            "playerNo": 2,
+            "cards": [
+                "Th",
+                "9d"
+            ],
+            "isDealer": true,
+            "isFold": false,
+            "isActive": true,
+            "isTurn": false,
+            "__v": 414,
+            "cardsServe": 0,
+            "isAllIn": false,
+            "isLastBlind": false,
+            "hasRaised": false,
+            "allCards": [
+                "Th",
+                "9d",
+                "Jc",
+                "5c",
+                "7h",
+                "2s",
+                "2d"
+            ],
+            "winName": "Pair",
+            "descr": "Pair, 2's",
+            "winRank": 3
+        },
+        {
+            "_id": "59f04b35f67f272540222a7e",
+            "createdAt": "2017-10-25T08:28:37.258Z",
+            "updatedAt": "2017-11-25T07:37:00.967Z",
+            "playerNo": 3,
+            "cards": [
+                "7s",
+                "9c"
+            ],
+            "isDealer": false,
+            "isFold": false,
+            "isActive": true,
+            "isTurn": false,
+            "__v": 294,
+            "cardsServe": 0,
+            "isAllIn": false,
+            "isLastBlind": false,
+            "hasRaised": false,
+            "allCards": [
+                "7s",
+                "9c",
+                "Jc",
+                "5c",
+                "7h",
+                "2s",
+                "2d"
+            ],
+            "winName": "Two Pair",
+            "descr": "Two Pair, 7's & 2's",
+            "winner": true,
+            "winRank": 1
+        },
+        {
+            "_id": "59f04b48f67f272540222a82",
+            "createdAt": "2017-10-25T08:28:56.686Z",
+            "updatedAt": "2017-11-25T07:37:00.967Z",
+            "playerNo": 4,
+            "cards": [
+                "5h",
+                "As"
+            ],
+            "isDealer": false,
+            "isFold": false,
+            "isActive": true,
+            "isTurn": false,
+            "__v": 233,
+            "cardsServe": 0,
+            "isAllIn": false,
+            "isLastBlind": false,
+            "hasRaised": false,
+            "allCards": [
+                "5h",
+                "As",
+                "Jc",
+                "5c",
+                "7h",
+                "2s",
+                "2d"
+            ],
+            "winName": "Two Pair",
+            "descr": "Two Pair, 5's & 2's",
+            "winRank": 2
+        }
+    ],
+    "communityCards": [{
+            "_id": "59f17f3e0dcd291f4c15c3ee",
+            "createdAt": "2017-10-26T06:22:54.432Z",
+            "updatedAt": "2017-11-25T07:36:57.762Z",
+            "cardNo": 2,
+            "cardValue": "Jc",
+            "isOpen": false,
+            "__v": 0,
+            "isBurn": false
+        },
+        {
+            "_id": "59f17f3e0dcd291f4c15c3ef",
+            "createdAt": "2017-10-26T06:22:54.432Z",
+            "updatedAt": "2017-11-25T07:36:57.931Z",
+            "cardNo": 3,
+            "cardValue": "5c",
+            "isOpen": false,
+            "__v": 0,
+            "isBurn": false
+        },
+        {
+            "_id": "59f17f3e0dcd291f4c15c3f0",
+            "createdAt": "2017-10-26T06:22:54.433Z",
+            "updatedAt": "2017-11-25T07:36:58.092Z",
+            "cardNo": 4,
+            "cardValue": "7h",
+            "isOpen": false,
+            "__v": 0,
+            "isBurn": false
+        },
+        {
+            "_id": "5a0d49774d262722f4514b97",
+            "createdAt": "2017-10-26T06:22:54.433Z",
+            "updatedAt": "2017-11-25T07:36:58.456Z",
+            "cardNo": 6,
+            "cardValue": "2s",
+            "isOpen": false,
+            "__v": 0,
+            "isBurn": false
+        },
+        {
+            "_id": "5a0d49864d262722f4514b99",
+            "createdAt": "2017-10-26T06:22:54.433Z",
+            "updatedAt": "2017-11-25T07:36:58.794Z",
+            "cardNo": 8,
+            "cardValue": "2d",
+            "isOpen": false,
+            "__v": 0,
+            "isBurn": false
+        }
+    ]
+}

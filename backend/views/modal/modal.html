@@ -1,0 +1,21 @@
+<form name="modalForm" ng-submit="submitModal(data);$dismiss()" class="min-hit">
+    <div class="modal-header blue-bg  ">
+        <div class="pull-right">
+            <a class="btn btn-clear" ng-click="$dismiss()">
+                <i class="ln-cross"></i>
+            </a>
+        </div>
+        <h5 class="modal-title">{{state}} {{type.name}}</h5>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <detail-field type="field" form="modalForm" value="item" ng-repeat="field in type.fields" data="data"></detail-field>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary btn-save" type="submit" ng-disabled="modalForm.$invalid">{{state}}</button>
+        </div>
+    </div>
+</form>

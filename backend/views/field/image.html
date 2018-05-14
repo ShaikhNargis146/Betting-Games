@@ -1,0 +1,5 @@
+<div class="form-group" fields>
+    <label>{{type.name}} <span ng-show="type.required">*</span><span ng-show="type.size">({{type.size}})</span></label>
+    <upload-image ng-model="formData[type.tableRef]" ng-disabled="type.disabled" no-view ng-if="!type.view"></upload-image>
+    <upload-image ng-model="formData[type.tableRef]" ng-disabled="type.disabled" ng-if="type.view"></upload-image>
+</div>

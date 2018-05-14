@@ -1,0 +1,34 @@
+<div class="form-group">
+  <!-- <label for="exampleInputEmail1" style="margin:5px;">Image Upload</label> -->
+  <div class="img-box" ng-if="model && !isMultiple" ng-hide="noShow">
+    <img ng-src="{{model|uploadpath}}" class="img-responsive uploadingImage img-thumbnail" ng-if="type=='image'" />
+    <iframe src="{{model|uploadpath}}" style="width:400px; height:400px;" frameborder="0" ng-if="type=='pdf'"></iframe>
+  </div>
+  <div class="clearfix" ng-if="model && isMultiple" ng-hide="noShow">
+    <div class="img-box" style="float:left;" ng-repeat="sImage in model track by $index">
+      <img alt="" ng-src="{{sImage|uploadpath}}" class="img-responsive uploadingImage img-thumbnail" />
+    </div>
+  </div>
+  <div class="btn-upload btn btn-primary btn-outline btn-small create-btn">
+    <input id="inputImage" ng-show="!isMultiple && type=='image'" type="file" accept="image/*,application/pdf" image="image"
+      title="Choose Files" class="btn-primary">
+    <input id="inputImage" ng-show="!isMultiple && type=='pdf'" type="file" accept="application/pdf" image="image" title="Choose Files"
+      class="btn-primary">
+    <input id="inputImage" ng-show="!isMultiple && type=='image|pdf'" type="file" accept="image/*,application/pdf" image="image"
+      title="Choose Files" class="btn-primary">
+    <input id="inputImage" ng-show="!isMultiple && type=='excel'" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+      image="image" title="Choose Files" class="btn-primary">
+    <input id="inputImage" ng-show="!isMultiple" type="file" ng-if="type=='all'" image="image" title="Choose Files" class="btn-primary">
+    <input id="inputImage" ng-show="isMultiple" type="file" accept="image/*,application/pdf" image="image" title="Choose Multiple Files"
+      class="btn-primary" multiple>
+    <span>CHOOSE FILE</span>
+    <!-- <a class="btn btn-primary btn-outline btn-small create-btn" ng-if="!isMultiple">Choose File</a> -->
+    <!-- <a class="btn btn-primary btn-outline btn-small create-btn" ng-if="isMultiple">Choose Files</a> -->
+  </div>
+  <br ng-show="isMultiple">
+  <button ng-show="isMultiple" class="btn btn-danger btn-outline btn-small create-btn" ng-click="clearOld()">CLEAR FILES</button>
+  <span class="label label-success" ng-if="uploadStatus == 'uploaded'" ng-show="!isMultiple">Document Uploaded - {{image.file.name}}</span>
+  <span class="label label-success" ng-if="uploadStatus == 'uploaded'" ng-show="isMultiple">Document Uploaded - {{image.length}}</span>
+  <span class="label label-warning" ng-if="uploadStatus == 'uploading'" ng-show="!isMultiple">Uploading Document {{image.file.name}}</span>
+  <span class="label label-warning" ng-if="uploadStatus == 'uploading'" ng-show="isMultiple">Uploading Document {{image.length}}</span>
+</div>

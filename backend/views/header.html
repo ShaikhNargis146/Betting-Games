@@ -1,0 +1,28 @@
+<div class="top-bar">
+    <div class="logo">
+        <a ui-sref="dashboard" title="Admin"><img src="img/logo1.png" alt="Absolute" height="60"></a>
+        <div class="menu-options"><span class="menu-action"><i></i></span></div>
+    </div>
+    <div class="quick-links">
+        <ul>
+            <li>
+                <a title="Logout" class="show-stats red-skin" ng-click="logout()" tooltip-placement="left" uib-tooltip="Logout"><i class="fa fa-power-off"></i></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- Top Bar -->
+<header class="side-header light-skin opened-menu">
+    <!-- <div class="admin-details">
+        <span><img ng-src="{{template.profile.photo|serverimage:80:80}}" alt="" /></span>
+        <h3 style="text-transform: capitalize;">{{template.profile.name}}</h3>
+        <i></i>
+    </div> -->
+    <div class="menu-scroll">
+        <div class="side-menus">
+            <span>MAIN LINKS</span>
+            <nav ng-include="template.menu"></nav>
+        </div>
+    </div>
+    <!-- Menu Scroll -->
+</header>

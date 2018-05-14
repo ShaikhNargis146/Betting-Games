@@ -1,0 +1,79 @@
+<form name="modalForm" ng-submit="createOfficer(modalData);$dismiss()"class="min-hit">
+    <div class="modal-header blue-bg  ">
+        <div class="pull-right">
+            <a class="btn btn-clear" ng-click="$dismiss()">
+                <i class="ln-cross"></i>
+            </a>
+        </div>
+        <h5 class="modal-title">Create New Officer</h5>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Salutation*</label>
+                    <select name="salutation" class="form-control" ng-model="modalData.salutation" required ng-options="salutation for salutation in salutations"></select>
+                    <div class="error-msg" ng-show="modalForm.salutation.$invalid && modalForm.salutation.$touched">Please Select Salutation</div>
+                </div>
+                <div class="form-group">
+                    <label>Last Name*</label>
+                    <input type="text" name="lastName" ng-model="modalData.lastName" class="form-control" required>
+                    <div class="error-msg" ng-show="modalForm.lastName.$invalid && modalForm.lastName.$touched">Please Enter Last Name</div>
+                </div>
+                <div class="form-group">
+                    <label>Designation*</label>
+                    <input type="text" name="designation" ng-model="modalData.designation" class="form-control" required>
+                    <div class="error-msg" ng-show="modalForm.designation.$invalid && modalForm.designation.$touched">Please Enter Designation</div>
+                </div>
+                <div class="form-group">
+                    <label>Office Number</label>
+                    <input type="text" name="officeNumber" ng-model="modalData.officeNumber" class="form-control">
+                    <div class="error-msg" ng-show="modalForm.officeNumber.$invalid && modalForm.officeNumber.$touched">Please Enter Office Number</div>
+                </div>
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="text" name="mobileNumber" ng-model="modalData.mobileNumber" class="form-control">
+                    <div class="error-msg" ng-show="modalForm.mobileNumber.$invalid && modalForm.mobileNumber.$touched">Please Enter Mobile Number</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>First Name*</label>
+                    <input type="text" name="firstName" ng-model="modalData.firstName" class="form-control" required>
+                    <div class="error-msg" ng-show="modalForm.firstName.$invalid && modalForm.firstName.$touched">Please Enter First Name</div>
+                </div>
+                <div class="form-group">
+                    <label>Date of Birth</label>
+                    <div class="input-group">
+                        <input type="text" name="birthDate" class="form-control" uib-datepicker-popup="{{format}}" ng-model="modalData.birthDate" is-open="popup.birthDate" datepicker-options="dateOptions" readonly/>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="popup.birthDate = true">
+                                <i class="fa fa-calendar"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Email ID*</label>
+                    <input type="email" name="email" ng-model="modalData.email" class="form-control" required>
+                    <div class="error-msg" ng-show="modalForm.email.$invalid && modalForm.email.$touched">Please Enter Email ID</div>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="input-group">
+                      <input type="{{passType}}" name="password" ng-model="modalData.password" class="form-control">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="showPass()">
+                                <i class="fa fa-eye"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+          <button class="btn btn-primary btn-save" type="submit" ng-disabled="modalForm.$invalid">{{buttonValue}}</button>
+        </div>
+    </div>
+</form>

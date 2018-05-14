@@ -1,0 +1,63 @@
+{
+    "title": "Table",
+    "description": "List of Tables",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [ 
+    {
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    },
+    {
+        "name": "Table Show",
+        "isSort": "",
+        "tableRef": "tableShow"
+    },{
+        "name": "Blind Amount",
+        "isSort": "",
+        "tableRef": "blindAmt"
+    },{
+        "name": "chal Amount",
+        "isSort": "",
+        "tableRef": "chalAmt"
+    },{
+        "name": "maximum No Of Players",
+        "isSort": "",
+        "tableRef": "maximumNoOfPlayers"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editTable",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete Table",
+        "content": "Are you sure you want to delete Table?",
+        "api": "Table/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createTable"
+    }],
+    "apiCall": {
+        "url": "Table/search",
+        "params": "_id"
+    }
+}

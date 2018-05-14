@@ -1,0 +1,80 @@
+{
+    "title": "Edit Table",
+    "name": "Table",
+    "jsonPage": "viewTable",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [
+        {
+            "name": "Name",
+            "type": "text",
+            "tableRef": "name",
+            "placeholder": "Enter Name",
+            "id": "name",
+            "validation": ["required"],
+            "url": ""
+        },
+    {
+        "name": "Table Show",
+        "type": "number",
+        "tableRef": "tableShow",
+        "placeholder": "Enter tableShow",
+        "id": "tableShow",
+        "validation": ["required"],
+        "url": ""
+    }, {
+        "name": "Blind Amount",
+        "type": "number",
+        "tableRef": "blindAmt",
+        "placeholder": "Enter blind Amount",
+        "id": "blindAmt",
+        "validation": ["required"],
+        "url": ""
+    },{
+        "name": "chal Amount",
+        "type": "number",
+        "tableRef": "chalAmt",
+        "placeholder": "Enter chal Amount",
+        "id": "chalAmt",
+        "validation": ["required"],
+        "url": ""
+    },{
+        "name": "maximum No Of Players",
+        "type": "number",
+        "tableRef": "maximumNoOfPlayers",
+        "placeholder": "Enter No Of Players",
+        "id": "maximumNoOfPlayers",
+        "validation": ["required"],
+        "url": ""
+    }
+    ],
+    "action": [{
+        "name": "submit",
+        "action": "submitTable",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewTable"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewTable"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Table/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Table/getOne",
+        "params": "_id"
+    }
+
+}

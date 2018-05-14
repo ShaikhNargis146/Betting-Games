@@ -1,0 +1,29 @@
+<div class="form-signin">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+    <div class="well">
+    <form>
+    <div class="img-logo text-center">
+    <img src="img/logo.png" alt="" width="40%">
+    </div>
+    <h2 class="form-signin-heading text-center text-uppercase">Login</h2>
+    <div class="form-group">
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="text" id="inputEmail" class="form-control" ng-model="data.username" placeholder="Email address" required=""
+    autofocus="">
+    </div>
+    <div class="form-group">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" ng-model="data.password" placeholder="Password" required="">
+    </div>
+    
+    <button class="btn btn-lg btn-dark btn-block" type="submit" ng-click="memberLogin(data)">Sign in</button>
+    </form>
+    </div>
+    
+    <!-- <a ui-sref="registration">Registration</a> -->
+    </div>
+    </div>
+    </div>
+    </div>
